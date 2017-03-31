@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Teste DropDownList";
+}
+
+
+@using (Html.BeginForm("Index", "Cliente", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <p>@ViewBag.Title</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            Selecione o cliente:
+            @Html.DropDownList("ClienteId", string.Empty)
+        </div>
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-default">
+}
